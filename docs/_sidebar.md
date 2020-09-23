@@ -8,7 +8,7 @@
 - **<big>LeetCode</big>**
 * [#1. Two Sum](/Leetcode/twoSum.md)
 
-- **<big>LeetCode</big>**
+- **<big>HackerRank</big>**
 * [#1. data types](/HackerRank/day1_data_types.md)
 
 - **<big>Java News</big>**
