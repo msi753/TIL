@@ -6,7 +6,7 @@
 * [TIL](/)
 
 - **<big>LeetCode</big>**
-* [#1. Two Sum](/Leetcode/twoSum.md)
+* [#1. Two Sum](/LeetCode/twoSum.md)
 
 - **<big>HackerRank</big>**
 * [#1. data types](/HackerRank/day1_data_types.md)
