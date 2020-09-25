@@ -59,7 +59,8 @@ for key in key_list:
 ```
 if score >= 80: result = "Success"
     else: result = "Fail"
-
+```
+```
 result = "Success" if score >= 80 else "Fail"
 ```
 
@@ -69,17 +70,25 @@ result = "Success" if score >= 80 else "Fail"
 - for i in range(5)하면 0부터 시작되며, 리스트나 튜플에서 사용
 
 # 4. 함수
-- 람다 표현식 Lambda Express
+> 람다 표현식 Lambda Express
 - print((lambda a, b: a + b)(3, 7))
+```
+add = lambda x, y : x + y
+print(add(3, 4))
+
+lambdas = [lambda x:x+10, lambda x:x+100]
+print(lambda[0](5))
+print(lambda[1](5))
+```
 
 # 5. 입출력
 - input() 한 줄의 문자열
 - 공백 list(map(int, input().split()))일 때,
 <br> input()으로 입력받은 문자열을 split()을 이용해 공백으로 나눈 리스트로 바꾼 후에
-<br> map을 이용하여 해당 리스트의 모든 원소에 int()함수를 적용하고
-<br> 그 결과를 list()로 다시 바꾼다
+<br> map을 이용하여 해당 리스트의 모든 원소에 int()함수를 적용하고, 그 결과를 list()로 다시 바꾼다
 - 줄바꿈 int(input())
 - n, m, k = map(int, input().split())
+<br>
 ```
 import sys
 data = sys.stdin.readline().rstrip()
@@ -141,6 +150,7 @@ for x in itertools.permutations(data, 2)
 #[1, 2]
 #[2, 1]
 ```
+
 - 조합 combination: 순서를 고려하지 않는 경우
 ```
 from itertools import combinations
