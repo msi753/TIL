@@ -127,9 +127,9 @@ sorted([('홍길동', 35), ('이순신', 75), ('아무개', 50)], key=lambda x:x
 data = [9, 1, 8, 5, 4]
 data.sort()     #[1, 4, 5, 8, 9]
 ```
-<br>
+
 > 2. itertools
-<br>
+
 - 순열 permutations: n개에서 r개를 선택하여 일렬로 나열
 <br>
 nPr = n!/(n-r)!

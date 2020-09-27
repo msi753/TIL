@@ -15,3 +15,74 @@ for i in data:
 
 print(result)
 ```
+# 2. 곱하기 혹은 더하기
+```
+data = input()
+
+result = data[0]
+
+for i in range(1, len(data)) :
+    num = int(data[i])
+    //0 또는 1인 경우 더하기가 효율적
+    if num <= 1 or result <= 1 :
+        result += num
+    else:
+        result *= num
+
+print(result)
+```
+
+# 3. 문자열 뒤집기
+```
+data = input()
+
+count0 = 0
+count1 = 0
+
+if data[0] == '1' :
+    count0 = 1
+else :
+    count1 = 1
+
+for i in range(len(data)-1) :
+    if data[i] != data[i+1] :
+        if data[i+1] == '1':
+            count0 += 1
+        else :
+            count1 += 1 
+    
+print(min(count0, count1))
+```
+
+# 4. 만들 수 없는 금액
+```
+n = input()
+data = list(map(int, input().split()))
+data.sort()
+
+target = 1
+for i in data :
+    if target < x :
+        break
+    target += x
+
+print(target)
+```
+
+ # 5. 볼링공 고르기
+ ```
+ n, m = map(int, input().split())
+ data = list(map(int, input().split()))
+
+ array = [0] *11
+
+ for i in data :
+    array[i] += 1
+
+ result = 0
+ for i in range(1, m+1) :
+    n -= array[i]
+    result += array[i] * n
+
+ print(result)
+ ```
