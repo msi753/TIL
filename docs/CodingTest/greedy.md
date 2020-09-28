@@ -46,8 +46,8 @@ result += (m-count)*second
 print(result)
 
 ```
-
 <br>
+
 숫자 카드 게임
 ```
 n, m = map(int, input().split())
@@ -63,8 +63,8 @@ for i in range(n):
     result = max(result), min_value
 print(result)
 ```
-
 <br>
+
 1이 될 때까지
 ```
 n, k = map(int, input().split())
