@@ -54,6 +54,33 @@ for key in key_list:
 - | 합집합, & 교집합, - 차집합
 - add(), update(), remove()
 
+> array[::] 용법 (Extended Slices)
+- arr[A:B:C], index A 부터 index B 까지 C의 간격으로 배열을 만들어라
+```
+>> arr = range(10)
+
+>> arr 
+[0,1,2,3,4,5,6,7,8,9] 
+
+>> arr[::2] # 처음부터 끝까지 두 칸 간격으로 
+[0,2,4,6,8] 
+
+>> arr[1::2] # index 1 부터 끝까지 두 칸 간격으로 
+[1,3,5,7,9] 
+
+>> arr[::-1] # 처음부터 끝까지 -1칸 간격으로 (역순으로) 
+[9,8,7,6,5,4,3,2,1,0] 
+
+>> arr[::-2] # 처음부터 끝까지 -2칸 간격으로 (역순, 두 칸 간격으로) 
+[9,7,5,3,1] 
+
+>> arr[3::-1] # index 3 부터 끝까지 -1칸 간격으로 (역순으로) 
+[3,2,1,0] 
+
+>> arr[1:6:2] # index 1 부터 index 6 까지 두 칸 간격으로 
+[1,3,5]
+```
+
 # 2. 조건문
 - pass 나중에 작성할 소스코드
 ```
@@ -158,3 +185,48 @@ data = ['A', 'B', 'C']
 list(combinations(data, 2))
 #[('A', 'B'), ('A', 'C'), ('B', 'C') ]
 ```
+
+- product: permutations와 비슷하지만 원소 중복
+```
+from itertools import product
+
+data = [A, B, C]
+result = list(prodect(data, repeat=2))  # 2개 뽑기
+
+print(result)
+#[('A', 'A'), ('A', 'B'), ('A', 'C'), ('B', 'A'), ('B', 'B'), ('B', 'C'), ('C', 'A'), ('C', 'B'), ('C', 'C')]
+```
+
+- combinations_with_replacement: combinations와 비슷하지만 원소 중복
+```
+from itertools import combinations_with_replacement
+
+data=['A', 'B', 'C']
+result = list(combinations_with_replacement(data, 2))   # 2개 뽑기
+
+print(result)
+# [('A', 'A'), ('A', 'B'), ('A', 'C'), ('B', 'B'), ('B', 'C'), ('C', 'C')]
+```
+
+> 3. heapq
+
+<br> 다익스트라 최단 경로 알고리즘
+<br> 우선순위 큐
+<br> 최소힙, O(NlongN), 최상단 원소는 '가장 작은' 원소
+```
+import heapq
+
+def heapsort(iterable) :
+    h = []
+    result = []
+    for value in iterable :
+        heapq.heappush(h, value)
+    for value in range(len(h)) :
+        result.append(heapq.heappop(h))
+    return result
+
+result = heapsort([1, 3, 5, 7, 9, 2, 4, 6, 8, 0])
+print(result)
+
+```
+> 4. bisect
