@@ -90,3 +90,5 @@ while i < n or j < m :
 for i in result :
     print(i, end=' ')
 ```
+# 3. 최대공약수
+- a x b / 최대공약수 = 최소공배수

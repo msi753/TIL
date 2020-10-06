@@ -1,5 +1,8 @@
 # 0. 탭키보다 띄어쓰기 4번을 습관 들이자
-
+# 0. python(pypy)이 초과되면 pypy(python)로 제출한다.
+# 0. 1초에 2000만번의 연산을 처리할 수 있다고 가정하고 문제를 푼다.
+- argument, 인자, 함수를 호출할 때 넣는 값
+- parameter, 매개변수, 함수 내부적으로 전달받고자 하는 값
 # 1. 자료형
 > 수
 - 1e9 는 10의 9제곱(10억)
@@ -10,6 +13,12 @@
 - a//b 몫 구하기
 - a**b x의 y제곱근
 <br>
+> 지수
+- 1e^9 는 10^9 (10,000,000,000) 십억
+- 최단경로 알고리즘에서 도달할 수 없는 노드에 대한 최단거리를 무한으로 둘 때 사용
+- int(ie^9)를 해야 정수형으로 사용 가능
+- round(123.456, 2) -> 123.46
+
 > 리스트
 - 내부적으로 연결리스트 자료구조
 - 빈 리스트 선언 방법, a = list(), a = []
@@ -32,9 +41,18 @@ print(a[1:4])   #[2, 3, 4]
 - reverse(), insert(), count(), remove()의 시간복잡도는 O(N)
 - 삭제는 [i  for i in a  if i <b>not in</b> remove_Set] 
 <br>
+> 문자열
+- +로 연결
+- 특정 인덱스의 값 변경 <b>불가능</b>
+```
+a = "String"
+print(a*3)  #StringStringString
+```
+
 > 튜플
 - 변경 불가능
 - (비용, 노드번호)
+- 최단경로 알고리즘
 <br>
 > 사전자료형
 - 해시테이블 O(1) 리스트보다 빠르다
@@ -88,9 +106,9 @@ if score >= 80: result = "Success"
     else: result = "Fail"
 ```
 ```
-result = "Success" if score >= 80 else "Fail"
+result = "Success" if score >= 80 else "Fail"   #한줄에 쓸 땐 if문이 가운데
 ```
-
+- if ~ elif ~ else
 # 3. 반복문
 - range(시작값, 끝값+1) 
 - 1~9, range(1, 10)
@@ -107,7 +125,12 @@ lambdas = [lambda x:x+10, lambda x:x+100]
 print(lambda[0](5))
 print(lambda[1](5))
 ```
-
+```
+list1 = [1, 2, 3, 4, 5]
+list2 = [6, 7, 8, 9, 10]
+result = map(lambda a, b : a+b, list1, list2)
+print(list(result))     #[7, 9, 11, 13, 15]
+```
 # 5. 입출력
 - input() 한 줄의 문자열
 - 공백 list(map(int, input().split()))일 때,
@@ -134,7 +157,8 @@ answer = 7
 print(f"정답은 {answer}입니다.")
 ```
 - 문자열 자료형끼리만 더하기 연산이 가능하다
-
+- , 는 띄어쓰기 포함
+- end는 print(줄바꿈 포함)의 줄바꿈 대신 사용
 # 6. 주요 라이브러리의 문법과 유의점
 - 표준 라이브러리를 사용하자
 <br> <a>https://docs.python.org/3.8/library/index.html</a>
