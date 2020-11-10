@@ -590,3 +590,214 @@ stream.forEach(name -> System.out.println(name));
 
 https://ict-nroo.tistory.com/43
 ```
+
+
+# Day 13: Abstract Classes
+```
+import java.util.*;
+
+abstract class Book {
+    String title;
+    String author;
+    
+    Book(String title, String author) {
+        this.title = title;
+        this.author = author;
+    }
+    
+    abstract void display();
+}
+
+// Declare your class here. Do not use the 'public' access modifier.
+class MyBook extends Book {
+
+    // Declare the price instance variable
+    int price;
+    /**   
+    *   Class Constructor
+    *   
+    *   @param title The book's title.
+    *   @param author The book's author.
+    *   @param price The book's price.
+    **/
+    // Write your constructor here
+    MyBook(String title, String author, int price) {
+        super(title, author);
+        this.price = price;
+    }
+    /**   
+    *   Method Name: display
+    *   
+    *   Print the title, author, and price in the specified format.
+    **/
+    // Write your method here
+    public void display() {
+        System.out.println("Title: " + this.title);
+        System.out.println("Author: " + this.author);
+        System.out.println("Price: " + this.price);
+    } 
+}// End class
+
+public class Solution {
+   
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String title = scanner.nextLine();
+        String author = scanner.nextLine();
+        int price = scanner.nextInt();
+        scanner.close();
+
+        Book book = new MyBook(title, author, price);
+        book.display();
+    }
+}
+```
+
+# Day 14: Scope
+```
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+
+class Difference {
+  	private int[] elements;
+  	public int maximumDifference;
+
+	// Add your code here
+    Difference(int[] a) {
+        this.elements = a;
+    }
+    public void computeDifference() {
+        int max = 1;
+        int min = 100;
+        for(int num:this.elements) {
+            if(num > max) max = num;
+            if(num < min) min = num;
+        }
+        this.maximumDifference = max - min;        
+    }
+} // End of Difference class
+```
+
+# Day 15: Linked List
+```
+import java.io.*;
+import java.util.*;
+
+class Node {
+	int data;
+	Node next;
+	Node(int d) {
+        data = d;
+        next = null;
+    }
+}
+
+class Solution {
+
+    public static Node insert(Node head,int data) {
+        //Complete this method
+        Node newNode = new Node(data);
+        if(head == null) {  //노드가 한개만 있을 때
+            return newNode;
+        }
+
+        //원래 있던 노드에 값을 다시 넣는다.
+        Node node = head;
+        //새로 생성한 노드와 이전 노드의 next값을 넣어 연결시킨다.
+        while(node.next != null) {
+            node = node.next;
+        }         
+        node.next = newNode;
+        return head;
+    }
+
+	public static void display(Node head) {
+        Node start = head;
+        while(start != null) {
+            System.out.print(start.data + " ");
+            start = start.next;
+        }
+    }
+
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        Node head = null;
+        int N = sc.nextInt();
+
+        while(N-- > 0) {
+            int ele = sc.nextInt();
+            head = insert(head,ele);
+        }
+        display(head);
+        sc.close();
+    }
+}
+```
+
+# Day 16: Exceptions - String to Integer
+```
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String S = in.next();
+        try {
+            int num = Integer.parseInt(S);
+            System.out.println(num);
+        }catch(NumberFormatException e) {
+            System.out.println("Bad String");
+        }
+    }
+}
+```
+
+# Day 17: More Exceptions
+```
+import java.util.*;
+import java.io.*;
+
+//Write your code here
+class Calculator {
+    int power(int n, int p) throws Exception {
+        if(n<0 || p<0) {
+            throw new Exception("n and p should be non-negative");
+        }
+        return (int) Math.pow(n,p);
+    }
+}
+
+
+class Solution{
+
+    public static void main(String[] args) {
+    
+        Scanner in = new Scanner(System.in);
+        int t = in.nextInt();
+        while (t-- > 0) {
+        
+            int n = in.nextInt();
+            int p = in.nextInt();
+            Calculator myCalculator = new Calculator();
+            try {
+                int ans = myCalculator.power(n, p);
+                System.out.println(ans);
+            }
+            catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        in.close();
+    }
+}
+
+```
