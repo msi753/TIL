@@ -29,6 +29,30 @@ I am not happy when people commit plagiarism in writing
 lose credibility 신용을 잃다
 
 The reception will be prepared at Pound Hall First Floor at 4 pm.
+
+<br>
+
+I just walk to my office.
+
+taking a car
+
+go to work
+
+<br>
+
+a presenter 발표자
+
+auditorium 오더토리엄 강당
+ 
+give a presentation 발표하다
+
+listen to the presentation 발표를 듣다
+
+globe shaped mark 지구 모양 마크
+
+the audience 청중(단수취급)
+
+The audience seems to be listening to the presentation.
 ​
 > 발음
 ee -> 길게 발음하자
@@ -45,6 +69,8 @@ goose 복수형 geese 거위
 
     it is not bad to think that you can get the time and freedom as a result of hard work back (at a) young age.
 
+    The 
+
 
 > 기타 
 
@@ -52,4 +78,14 @@ Have you ever? 경험을 물을 땐
 
 yes, no로 대답이 가능하다.
 
-> 유닛4까지 정리
+
+> 문법, 문장 교정
+
+This picture was taken in a simple gymnasium.
+
+symposium 심포지엄
+
+They are discussing the universe.
+= They are talking about the universe.
+
+> unit 7부터 정리하기
