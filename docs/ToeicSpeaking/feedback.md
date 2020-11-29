@@ -54,6 +54,42 @@ the audience 청중(단수취급)
 
 The audience seems to be listening to the presentation.
 ​
+<br>
+
+how to learn basic language
+
+audio book (by listening and repeating what you hear)
+
+prepare basic audio book for basic conversation
+
+What about postponing the German session?
+
+<br>
+
+get a higher salary
+
+work in the same company
+
+you can not get a salary raise
+
+your salary will not increase
+
+It just went like this
+
+I just went with the flow
+
+I am not contented with the salary
+
+<br>
+
+I have been to a beach near my house. 
+
+pandemic situation
+
+capital 자본
+
+space crafts 우주선
+
 > 발음
 ee -> 길게 발음하자
 
@@ -68,8 +104,6 @@ goose 복수형 geese 거위
     I don't have fortune (in buying) a house in Seoul.
 
     it is not bad to think that you can get the time and freedom as a result of hard work back (at a) young age.
-
-    The 
 
 
 > 기타 
@@ -88,4 +122,4 @@ symposium 심포지엄
 They are discussing the universe.
 = They are talking about the universe.
 
-> unit 7부터 정리하기
+> unit 12부터 정리하기
