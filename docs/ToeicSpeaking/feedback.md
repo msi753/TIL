@@ -32,6 +32,34 @@ The reception will be prepared at Pound Hall First Floor at 4 pm.
 
 <br>
 
+advantages of having a vacation in my country.
+
+I don't have to travel too far. It's convenient.
+
+There is no language barrier. If I go other county, I have to study their languages.
+
+I enjoy eating local food.
+
+It doesn't matter whrer I am.
+
+the traditonal korean house 전통적인
+
+<br>
+
+What’s the best time of year to go on vacation, and why?
+
+I think that depends on where you go. I mean, if you go to a cold country it might be best to go in summer because it would be warmer, but if you visit a hot country you should go in winter because it might be cooler.
+
+Have you ever tried an extreme sport? Why or why not?
+
+Does mountain biking count?
+
+Do you prefer to vacation in your country or abroad? Why?
+
+It depends. I only really get one vacation from work each year, so I like to plan a nice vacation abroad for that time. I really love to get away
+from it all and spend my days at the beach somewhere like Bali. I always get two traditional holidays: one over the Christmas break and New Year and one later in autumn for Thanksgiving weekend. Those are shorter, only a few days, so I prefer to either stay home or visit my family. So, I think it depends on which time.
+
+
 I just walk to my office.
 
 taking a car
@@ -88,4 +116,11 @@ symposium 심포지엄
 They are discussing the universe.
 = They are talking about the universe.
 
-> unit 7부터 정리하기
+I will be <b>staying</b> at a room.
+
+There is no trouble <b>communicating</b> with people.
+
+I'm afraid <b>to</b> die.
+
+
+> unit 8 복습할 차례
