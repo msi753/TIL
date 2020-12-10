@@ -88,3 +88,6 @@ juliet.travel("부산", 3)
 pey.love(juliet)
 print(pey + juliet) # __add__ 호출, 박응용, 김줄리엣 결혼했네
 print(pey - juliet) # __sub__ 호출, 박응용, 김줄리엣 이혼했네
+
+# 패키지
+# __init__.py 파일은 해당 디렉터리가 패키지의 일부임을 알려주는 역할을 한다.
