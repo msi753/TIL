@@ -5,6 +5,56 @@
 - parameter, 매개변수, 함수 내부적으로 전달받고자 하는 값
 <br>
 
+# 0. 입력의 개수가 정해지지 않았을 때 입력 받는 방법
++ EOF
++ try/except
+```
+# input.txt
+1 1
+2 3
+3 4
+9 8
+5 2
+```
+```
+# main.py
+import sys
+sys.stdin = open('input.txt', 'r', encoding='utf-8')
+for line in sys.stdin
+    print(line)                     # 1 1\n
+    print(line.split())             # ['1', '1']
+    n, m = map(int, line.split())   # 1 1
+    print(n+m)                      #2
+```
+```
+제출 답변 1 (정석)
+import sys
+for line in sys.stdin
+    print(line)     
+    print(line.split())
+    n, m = map(int, line.split())
+    print(n+m)
+```
+```
+제출 답변 2
+import sys
+input = sys.stdin.readline
+while True:
+    try:
+        n, m = map(int, input().split())
+        print(n+m)
+    except:
+        break
+```
+```
+제출 답변 3
+while True:
+    try:
+        n, m = map(int, input().split())
+        print(n+m)
+    except:
+        break
+```
 # 1. 자료형
 > 수
 - 1e9 는 10의 9제곱(10억)
