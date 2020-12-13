@@ -150,15 +150,32 @@ symposium 심포지엄
 They are discussing the universe.
 = They are talking about the universe.
 
-<<<<<<< HEAD
 I will be <b>staying</b> at a room.
 
 There is no trouble <b>communicating</b> with people.
 
 I'm afraid <b>to</b> die.
 
+I'm frightened to try extreme sports.
 
-> unit 8 복습할 차례
-=======
-> unit 12부터 정리하기
->>>>>>> e4e4f2453c9c0d2f969e6738fe1920287bf810dc
+It takes a short time to travel.
+
+Plagiarism is a terrible Idea. 
+
+I like to study with my friends in a public place because I can concentration on 'my' work.
+
+in the afternoon
+
+I believe I can research about the the topic so I can fully comprehend.
+
+It inspire's' me to imagine the future.
+
+I like to watch Sci fi 'movies'.
+
+It will be held at Hot Park 'on Saturdays' in July and August .
+
+What about 'postponing' the interview?
+
+We can have 'an' online interview?
+
+I just felt that I'm not ready for the interview, so I gave it a rain check.
