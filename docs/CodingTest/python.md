@@ -212,6 +212,9 @@ print("정답은", str(answer), "입니다")  #공백이 들어간다
 ```
 answer = 7
 print(f"정답은 {answer}입니다.")
+
+rate = count/data[0]*100
+print(f'{rate:.3f}')   # 40.000
 ```
 - 문자열 자료형끼리만 더하기 연산이 가능하다
 - , 는 띄어쓰기 포함
@@ -224,6 +227,10 @@ print(f"정답은 {answer}입니다.")
 > 1. 내장함수
 ```
 sum([1, 2, 3, 4, 5])   #15
+
+data = list(map(int, input().split(' ')))
+sum(data[1:])   # 0번째 말고 1번째부터 끝까지의 합
+
 min(7, 3, 5, 2)     #2
 max(7, 3, 5, 2)     #7
 eval("(3+5)*7")     #56

@@ -21,3 +21,10 @@ data = [1, 2, 3]
 data = set(data)
 print(len(data))
 ```
+
++ 문자열 리스트로 만들기
+```
+list(str(input()))
+list(input())
+```
+
