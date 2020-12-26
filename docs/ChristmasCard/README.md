@@ -25,3 +25,6 @@ background-size: cover;
 }
 ```
 width를 300으로 줄이니 공간이 생겨서 margin을 auto로 주니 가운데 정렬이 가능해졌다.
+
+# 링크
+https://xmas.spartacodingclub.kr/V09JUjCKM8Uu/xmas.html
