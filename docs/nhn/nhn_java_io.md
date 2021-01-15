@@ -8,14 +8,15 @@ pre-test1차는 코딩 테스트 전형이다.
 
 모든 기업이 파이썬을 허용하지 않는다는 사실을 간과하고 있었다.
 
-지원하는 언어는 c, c++, java가 있고 java를 10/24까지 준비해보록 하자.
+지원하는 언어는 c, c++, java가 있다.
 
 자바는 입출력이 까다롭기 때문에 입출력 과정을 가져다 쓸 수 있도록 정리해두자.
 
 우선, 코드업 100제를 풀었던 내용을 회고해보자.
 
-# 1. 코드업
-> 간단한 입출력
+# 자바
+
+## 1. 간단한 입출력
 ```
 int a = sc.nextInt();                       // int 변수 1개 입력받는 예제
 double b = sc.nextDouble();                 // double 변수 1개 입력받는 예제 ex) 1.0
@@ -59,7 +60,7 @@ System.out.printf("%s%s", var1, var2);		// 문자열 2개 출력하는 예제
 
 ```
 
-> Scanner 사용법
+### 1-1. Scanner 사용법
 ```
 import java.util.Scanner;
 
@@ -78,7 +79,7 @@ class Solution {
 
 ```
 
-> 이스케이핑
+### 1-2. 이스케이핑
 ```
 '작은따옴표'와 "큰따옴표"와 백슬래시\를 이스케이핑하려면
 \' \" \\ 와 같이 써야한다.
@@ -90,9 +91,9 @@ public class Main{
 }
 ```
 
-> 문자열 자르기
+## 2. 문자열 자르기
 
-> 1. split과 System.out.format, join
+### 2-1. split과 System.out.format, join
 
 입력: 년, 월, 일이 ".(닷)"으로 구분되어 입력된다.
 
@@ -127,7 +128,7 @@ String strPhone = String.join("", phone.split("-"));
 System.out.println(strPhone);
 ```
 
-> 2. substring
+### 2-2.  substring
 ```
 begin index는 0, end index는 자르려는 글자 끝 index + 1
 
@@ -164,14 +165,14 @@ public class Main{
 }
 ```
 
-> 버퍼
+## 3. 버퍼
 
 데이터를 한 곳에서 다른 한 곳으로 전송하는 동안 일시적으로 그 데이터를 보관하는 임시 메모리 영역
 
 입출력 속도를 향상시키기 위해 사용
 물을 나르는데 컵을 쓰느냐, 양동이를 쓰느냐의 차이
 
-버퍼를 이용한 입력: BufferedReader
+### 3-1. 버퍼를 이용한 입력: BufferedReader
 ```
 import java.io.*;
  
@@ -204,7 +205,7 @@ class BufferedReaderEx1 {
 
 ```
 
-버퍼를 이용한 출력: BufferdWriter
+### 3-2. 버퍼를 이용한 출력: BufferdWriter
 ```
 import java.io.*;
  
@@ -259,7 +260,7 @@ Scanner는 띄어쓰기(스페이스)와 엔터(개행문자)를 경계로 값�
 
 BufferedReader는 엔터만 경계로 인식하고 받은 데이터가 String으로 고정되기 때문에 데이터를 따로 가공해야 하는 경우가 많다
 
-> toCharArray()로 배열을 만들고, new String으로 문자열 만들기
+## 4. toCharArray()로 배열을 만들고, new String으로 문자열 만들기
 ```
 public class Test {
 	public static void main(String[] args) {
@@ -276,7 +277,7 @@ public class Test {
 }
 ```
 
-> int long, double float
+## 5. int long, double float
 
 int 4바이트 '기본형' 20억까지 정수	Integer.parseInt()
 
@@ -294,7 +295,7 @@ String.format("%X", i);	// %X는 대문자, %x는 소문자
 System.out.format("%X*%X=%X\n", b, i, b*i);
 ```
 
-> length, length(), size() 의 차이
+## 6. length, length(), size() 의 차이
 
 length: 배열의 길이
 
@@ -302,7 +303,7 @@ length(): 문자열의 길이
 
 size(): 컬렉션프레임워크 타입의 길이
 
-> 비트단위(bitwise) 연산자
+## 7. 비트단위(bitwise) 연산자
 
 ~(bitwise not), &(bitwise and), |(bitwise or), ^(bitwise xor), 
 <<(bitwise left shift), >>(bitwise right shift)
@@ -316,13 +317,14 @@ size(): 컬렉션프레임워크 타입의 길이
 	```
 - xor: 서로 다를 때 1(참)
 
-> 삼항 연산자
+## 8. 삼항 연산자
 ```
 System.out.println(a>b?a:b);
 System.out.println((a<b?a:b)<c?(a<b?a:b):c);	//a, b, c 의 값 중 가장 큰 값
 ```
 
-> switch
+## 9. 반복문
+### 9-1. switch
 
 switch( ) 에 주어지는 값은 “정수"값만 가능하며,
 문자도 아스키코드 정수값이기 때문에 가능하다.
@@ -353,8 +355,8 @@ public class Main {
 }
 ```
 
-> do while 로 알파벳 출력하기
-```
+### 9-2. do while 로 알파벳 출력하기
+``` java
 import java.util.Scanner;
 
 public class Main {
@@ -376,10 +378,10 @@ public class Main {
 }
 ```
 
-> 반복문 continue 사용하기
+### 9-3. 반복문 continue 사용하기
 
 3의 배수는 통과 시켜라
-```
+``` java
 import java.util.Scanner;
 
 public class Main {
@@ -398,9 +400,9 @@ public class Main {
 	}
 }
 ```
-
-> 1097. 바둑알 십자 뒤집기 (+)
-```
+## 10. 에제
+### 10-1. 바둑알 십자 뒤집기 (+)
+``` java
 import java.util.Scanner;
 
 public class Main {
@@ -451,8 +453,8 @@ public class Main {
 
 ```
 
-> 1098. 설탕과자 뽑기
-```
+### 10-2. 설탕과자 뽑기
+``` java
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -534,8 +536,8 @@ public class Main{
 }
 ```
 
-> 1099. 성실한 개미
-```
+### 10-3. 성실한 개미
+``` java
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
