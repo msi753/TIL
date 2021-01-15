@@ -7,12 +7,12 @@
 
 * [TIL](/)
 
-- **<big>CodingTest</big>**
-* [#1. how to](/CodingTest/howto.md)
+- **<big>코딩테스트</big>**
+* [#1. 준비방법](/CodingTest/howto.md)
 * [#2. 파이썬 문법](/CodingTest/python.md)
 * [#3. 그리디](/CodingTest/greedy.md)
 
-- **<big>LeetCode</big>**
+- **<big>자바</big>**
 * [#1. Two Sum](/LeetCode/twoSum.md)
 
 - **<big>Java News</big>**

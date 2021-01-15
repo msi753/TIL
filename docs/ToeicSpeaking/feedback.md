@@ -179,3 +179,10 @@ What about 'postponing' the interview?
 We can have 'an' online interview?
 
 I just felt that I'm not ready for the interview, so I gave it a rain check.
+
+# 토스 레벨6 달성(150)
+연습했던 템플릿 내용을 더 활용하면 좋았을 텐데
+
+같은 문장을 다르게 반복하는 실수를 했다.
+
+심심하면 오픽도 도전해봐야지
