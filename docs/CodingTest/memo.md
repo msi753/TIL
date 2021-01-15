@@ -60,6 +60,13 @@ for i in range(len(string)):
     print('')
 ```
 
++ sys.stdout.write()    print() 보다 빠르다.
+```
+import sys
+sys.stdout.write("aaa") # \n을 포함하지 않음.
+sys.stdout.write("bbb)  # 결과: aaabbb
+```
+
 + 대문자로 변경하기
 ``` python
 D = 'abc-def gh'
@@ -75,3 +82,4 @@ if a in s:
     s = replace(a, '*')
 print(s)    # *bc
 ```
+
