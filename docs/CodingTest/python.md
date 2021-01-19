@@ -59,9 +59,13 @@ while True:
 > 수
 - 1e9 는 10의 9제곱(10억)
 - 987,654,321 로 표현하기도 한다
-<br>
 - round(123.456, 2) 의 결과는 123.46
-<br>
+    + round()는 끝자리가 0이면 출력하지 않는다. ex) round(3.1015, 2) -> 3.1
+    + math는 정수를 리턴
+    ``` python
+    import math
+    math.ceil(3.1015)   # 4
+    ```
 - a//b 몫 구하기
 - a**b x의 y제곱근
 <br>
@@ -207,9 +211,9 @@ print(data)
 answer = 7
 print("정답은 "+str(answer)+"입니다")
 print("정답은", str(answer), "입니다")  #공백이 들어간다
-
-#Python3.6 이상 f-string
 ```
+- Python3.6 이상 f-string
+``` python
 answer = 7
 print(f"정답은 {answer}입니다.")
 
@@ -220,12 +224,18 @@ print(f'{rate:.3f}')   # 40.000
 - , 는 띄어쓰기 포함
 - end는 print(줄바꿈 포함)의 줄바꿈 대신 사용
 
+- format()
+``` python
+format(3.141592, ".2f") # 3.14
+print("{0:.0f}".format(2.34))   # 2 (정수만 출력)
+print("{:.0f}".format(3.01))    # {0} 이라고 표시하면 format함수 안의 첫번째 값을 넣으라는 뜻, 0은 생략 가능
+```
 # 6. 주요 라이브러리의 문법과 유의점
 - 표준 라이브러리를 사용하자
 <br> <a>https://docs.python.org/3.8/library/index.html</a>
 
 > 1. 내장함수
-```
+``` python
 sum([1, 2, 3, 4, 5])   #15
 
 data = list(map(int, input().split(' ')))
@@ -234,12 +244,18 @@ sum(data[1:])   # 0번째 말고 1번째부터 끝까지의 합
 min(7, 3, 5, 2)     #2
 max(7, 3, 5, 2)     #7
 eval("(3+5)*7")     #56
+
+# sorted(list)와 list.sort()의 차이
+
+# 1. sorted(iterable[, key=<function>][, reverse=<True|False>])
+# 리턴값은 정렬된 새로운 리스트(원본에 영향X)
 sorted([9, 1, 8, 5, 4])     #[1, 4, 5, 8, 9]
 sorted([9, 1, 8, 5, 4], reverse = True) #[9, 8, 5, 4, 1]
-
-//튜플의 두 번째 원소(수)를 기준으로 내림차순으로 정렬
+# 튜플의 두 번째 원소(수)를 기준으로 내림차순으로 정렬
 sorted([('홍길동', 35), ('이순신', 75), ('아무개', 50)], key=lambda x:x[1], reverse=True)   #[('이순신', 75), ('아무개', 50), ('홍길동', 35)]
 
+# 2. list.sort([revers=<True|False>][, key=<function>])
+# 리턴값은 None, 원본에 영향O
 data = [9, 1, 8, 5, 4]
 data.sort()     #[1, 4, 5, 8, 9]
 ```

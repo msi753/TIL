@@ -83,3 +83,12 @@ if a in s:
 print(s)    # *bc
 ```
 
++ 최빈값(mode), 빈도가 가장 많은 수 구하기
+``` python
+from collections import Counter
+a = [1, 3, 8, 2, 2]
+b = sorted(a)
+c = Counter(b)  # Counter({2: 2, 1: 1, 3: 1, 8: 1}) 딕셔너리 형식
+mode = c.most_common() # [(2, 2), (1, 1), (3, 1), (8, 1)]  리스트 안의 튜플 형식, 2차원 배열 늒김, [X][Y] Y의 내림차순 우선으로 정렬되고 나머지는 그대로기 때문에 X를 미리 정렬해야 한다. 
+print(mode[0][0])
+```
