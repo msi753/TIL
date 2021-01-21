@@ -254,7 +254,7 @@ sorted([9, 1, 8, 5, 4], reverse = True) #[9, 8, 5, 4, 1]
 # 튜플의 두 번째 원소(수)를 기준으로 내림차순으로 정렬
 sorted([('홍길동', 35), ('이순신', 75), ('아무개', 50)], key=lambda x:x[1], reverse=True)   #[('이순신', 75), ('아무개', 50), ('홍길동', 35)]
 
-# 2. list.sort([revers=<True|False>][, key=<function>])
+# 2. list.sort([reverse=<True|False>][, key=<function>])
 # 리턴값은 None, 원본에 영향O
 data = [9, 1, 8, 5, 4]
 data.sort()     #[1, 4, 5, 8, 9]
