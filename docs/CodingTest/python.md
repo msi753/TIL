@@ -258,6 +258,9 @@ sorted([('홍길동', 35), ('이순신', 75), ('아무개', 50)], key=lambda x:x
 # 리턴값은 None, 원본에 영향O
 data = [9, 1, 8, 5, 4]
 data.sort()     #[1, 4, 5, 8, 9]
+
+office = [(1, 2), (3, 4), (5, 6)]
+office.sort(key = lambda x: (x[1], x[0]))
 ```
 
 > 2. itertools
