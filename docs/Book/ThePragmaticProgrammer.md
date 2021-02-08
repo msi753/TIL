@@ -17,3 +17,38 @@ Tip 9. 읽고 듣는 것을 비판적으로 분석하라
 Tip 10. 무엇을 말하는가와 어떻게 말하는가 모두 중요하다
 
 # 2. 실용주의 접근법
+Tip 11. DRY - 반복하지 마라 Don't Repeat Yourself
+```
+class Line {
+    public:
+        Point start;
+        Point end;
+        double length;
+};
+
+class Line {
+    private:
+        bool changed;
+        double length;
+        Point start;
+        Point end;
+    public:
+        void setStart(Point P) {start = p; chnaged=true;}
+        void setEnd(Point P) {end = p; chnaged=true;}
+        Point getStart(void) {return start;}
+        Point getEnt(void) {return end;}
+        double getLength() {
+            if (changed) {
+                length = start.distanceTo(end);
+                changed = false;
+            }
+            return length;
+        }
+};
+```
+Tip 12. 재사용하기 쉽게 만들라
+Tip 13. 관련 없는 것들 간에 서로 영향이 없도록 하라
+Tip 14. 최종 결정이란 없다
+Tip 15. 목표물을 찾기 위해 예광탄을 써라
+Tip 16. 프로토타입을 통해 학습하라
+Tip 17. 문제 도메인에 가깝게 프로그래밍하라
