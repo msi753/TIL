@@ -6,7 +6,12 @@
 
     ``` python
     print(str(n) + '' + str(i) + '=' + str(ni), end='\n')
+
+    # 3 찾기
+    if '3' in str(n)+str(i):
+        count += 1
     ```
+
 
 + count함수
 ``` python
@@ -29,6 +34,19 @@ print(len(data))
 ``` python
 list(str(input()))
 list(input())
+```
+
++ 리스트 문자열로 만들기
+``` python
+result = ['a','1']
+print(''.join(result))
+```
+
++ 알파벳 체크하기
+``` python
+x = 'a'
+if x.isalpha():
+    print('알파벳')
 ```
 
 + ord의 활용
