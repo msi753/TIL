@@ -103,3 +103,5 @@ visited = [False]*9
 
 bfs(graph, 1, visited)
 ```
+
+## 2. 정렬

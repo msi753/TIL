@@ -18,7 +18,8 @@
 a = int(input())    #150
 b = int(input())    #266
 c = int(input())    #427
-numlist = list(str(a*b*c))
+numlist = list(str(a*b*c))  # ['1', '7', '0', '3', '7', '3', '0', '0']
+# 0~9까지 돌면서 각각의 숫자가 몇 개인지 출력
 for i in range(10):
     print(numlist.count(str(i)))
 ```
@@ -30,7 +31,7 @@ data = set(data)
 print(len(data))
 ```
 
-+ 문자열 리스트로 만들기
++ ]////////////////////////m 리스트로 만들기
 ``` python
 list(str(input()))
 list(input())
@@ -120,3 +121,5 @@ print(splitted_str) # ['Hi', 'my', 'name', 'is', 'sim']
 joined_str = "-".join(splitted_str) 
 print(joined_str)   # Hi-my-name-is-sim 
 ```
+
++ 데이터 타입 확인은 `type()`메서드 활용
