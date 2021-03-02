@@ -123,3 +123,27 @@ print(joined_str)   # Hi-my-name-is-sim
 ```
 
 + 데이터 타입 확인은 `type()`메서드 활용
+
++ 변수 앞에 붙어 있는 *의 의미: 가변적 개수를 가진 튜플
+``` python
+def print_asterisk(*arr):
+    print(arr)
+    print(type(arr))
+
+print_asterisk(1, 2)
+
+>> (1, 2)
+>> <class 'tuple'>
+```
+
++ 변수 앞에 붙어 있는 **의 의미: 가변적 개수를 가진 딕셔너리
+``` python
+def print_aaaasterisk(**keyarr):
+    print(keyarr)
+    print(type(keyarr))
+
+print_aaaasterisk(foo=1, foo=2)
+
+>> {'foo': 1, 'bar': 2}
+>> <class 'dict'>
+```
