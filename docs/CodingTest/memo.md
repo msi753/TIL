@@ -12,6 +12,12 @@
         count += 1
     ```
 
++ 아니면 sep를 활용할 수 있다
+``` python
+a = 1
+b = 2
+print(a, '/', b, sep = '')
+```
 
 + count함수
 ``` python

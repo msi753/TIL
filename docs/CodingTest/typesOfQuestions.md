@@ -105,3 +105,99 @@ bfs(graph, 1, visited)
 ```
 
 ## 2. 정렬
+### 선택정렬
+시간복잡도: O(N^2)
+가장 작은 것을 선택한다
+데이터 1,000개 정도까지 권장
+``` python
+arr = [7, 5, 9, 0, 3, 1, 6, 2, 4, 8]
+
+for i in range(len(arr) - 1):
+    min_idx = i
+    for j in range(i + 1, len(arr)):
+        if arr[j] < arr[min_idx]:
+            min_idx = j
+    arr[i], arr[min_idx] = arr[min_idx], arr[i]
+
+print(arr)
+```
+
+### 삽입정렬
+시간복잡도: O(N^2)
+거의 정렬되어 있다면 O(N)
+첫번째 데이터는 정렬되어 있다고 가정한다
+``` python
+array = [7, 5, 9, 0, 3, 1, 6, 2, 4, 8]
+
+for i in range(1, len(array)):
+    for j in range(i, 0, -1):
+        if array[j-1] > array[j]:
+            array[j], array[j-1] = array[j-1], array[j]
+        else:
+            break
+
+print(array)
+```
+
+### 퀵 정렬
+시간복잡도: O(NlogN)
+이미 데이터가 정렬되어 있는 경우 O(N^2)
+
+피벗pivot 사용
+호어 분할
+1. 첫 번째 데이터를 pivot으로 두고 오른쪽으로 전진하면서 큰 것, 왼쪽으로 전진하면서 작은 것을 교환한다
+2. 엇갈리면 작은 데이터와 pivot을 교환한다
+3. 각각의 파티션별로 1-2를 반복한다
+``` python
+array = [7, 5, 9, 0, 3, 1, 6, 2, 4, 8]
+
+def quicksort(array):
+    if len(array) <= 1:
+        return array
+
+    pivot = array[0]
+    tail = array[1:]
+
+    left_side = [x for x in tail if x <= pivot]
+    right_side = [x for x in tail if x > pivot]
+
+    return quicksort(left_side) + [pivot] + quicksort(right_side)
+
+print(quicksort(array))
+```
+
+### 계수Count 정렬
+시간복잡도: O(N+K)
+N: 데이터의 개수
+K: 데이터의 최댓값
+데이터의 크기 범위가 정수 형태로 제한되어 표현할 수 있을 때
+중복값이 많을 때 유리하다 (ex) 성적
+가장 큰 수와 작은 수의 데이터 차이가 100을 넘지 않을 때 사용하면 좋다
+``` python
+array = [7, 5, 9, 0, 3, 1, 6, 2, 9, 1, 4, 8, 0, 5, 2]
+
+count = [0] * (max(array)+1)
+
+for i in range(len(array)):
+    count[array[i]] += 1
+
+for i in range(len(count)):
+    for j in range(count[i]):
+        print(i, end='')
+```
+
+### 내장함수
+시간복잡도: O(NlogN) -> 데이터 십만개일 때 유용
+key로 정렬 가능
+(ex) key = lambda student : student[1]
+1. sorted() -> 리스트 자료형 리턴
+2. sort() -> 리턴값 없고 내부 정렬
+``` python
+student_tuples = [
+    ('john', 'A', 15),
+    ('jane', 'B', 12),
+    ('dave', 'B', 10),
+]
+result = sorted(student_tuples, key=lambda student: student[2])   # sort by age
+print(result)
+```
