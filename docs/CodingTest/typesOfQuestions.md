@@ -201,3 +201,33 @@ student_tuples = [
 result = sorted(student_tuples, key=lambda student: student[2])   # sort by age
 print(result)
 ```
+
+## 3. 이진 탐색 binary search
+
+**전제:** 이미 정렬되어 있다
+
+시작값, 중간값, 끝값이 있을 때
+
+중간값이 찾는값보다 작을 때 오른쪽만 탐색하고,
+                    클 때 왼쪽만 탐색한다
+
+시간복잡도: 
+
+### 재귀
+``` python
+
+```
+
+### 반복문 (추천)
+``` python
+
+```
+
+### 이진탐색트리
+왼쪽 노드의 값 < 루트의 값 < 오른쪽 노드의 값
+
+## 4. 다이나믹 프로그래밍 DP
+
+## 5. 최단 경로
+
+## 6. 그래프 이론

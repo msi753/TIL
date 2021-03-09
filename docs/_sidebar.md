@@ -9,6 +9,7 @@
 * [준비방법](/CodingTest/howto.md)
 * [파이썬 문법](/CodingTest/python.md)
 * [오답노트](/CodingTest/memo.md)
+* [유형별 풀이방법](/CodingTest/typesOfQuestions.md)
 
 - **<big>자바</big>**
 * [자바입출력](/nhn/nhn_java_io.md)

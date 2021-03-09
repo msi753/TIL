@@ -123,7 +123,6 @@ print(mode[0][0])
 str = "Hi my name is sim" 
 splitted_str = str.split() 
 print(splitted_str) # ['Hi', 'my', 'name', 'is', 'sim'] 
-
 joined_str = "-".join(splitted_str) 
 print(joined_str)   # Hi-my-name-is-sim 
 ```
