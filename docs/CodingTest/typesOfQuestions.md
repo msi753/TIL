@@ -7,6 +7,9 @@
 stack = []  // 별도의 라이브러리를 사용할 필요가 없다
 stack.append(1)
 stack.pop()
+
+not stack   // 비어있으면 1
+stack[-1] if stack else '-1'    // top, 가장 위에 있는 숫자
 ```
 
 ### 큐

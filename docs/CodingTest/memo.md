@@ -37,10 +37,11 @@ data = set(data)
 print(len(data))
 ```
 
-+ ]////////////////////////m 리스트로 만들기
++ 리스트로 만들기
 ``` python
 list(str(input()))
 list(input())
+list(map(int, input()))
 ```
 
 + 리스트 문자열로 만들기
@@ -134,11 +135,9 @@ print(joined_str)   # Hi-my-name-is-sim
 def print_asterisk(*arr):
     print(arr)
     print(type(arr))
-
 print_asterisk(1, 2)
-
->> (1, 2)
->> <class 'tuple'>
+# (1, 2)
+# <class 'tuple'>
 ```
 
 + 변수 앞에 붙어 있는 **의 의미: 가변적 개수를 가진 딕셔너리
@@ -151,4 +150,22 @@ print_aaaasterisk(foo=1, foo=2)
 
 >> {'foo': 1, 'bar': 2}
 >> <class 'dict'>
+```
+
++ 4948 베르트랑 공준 푸는 중
+``` pypy
+answer = []
+
+a = int(input())
+while a>0:
+    cnt = 0
+
+    n = a
+    n2 = n*2
+
+    
+
+
+    a = int(input())
+
 ```
