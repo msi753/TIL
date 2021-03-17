@@ -214,16 +214,38 @@ print(result)
 중간값이 찾는값보다 작을 때 오른쪽만 탐색하고,
                     클 때 왼쪽만 탐색한다
 
-시간복잡도: 
+시간복잡도: O(longN), 퀵 정렬과 비슷
 
 ### 재귀
 ``` python
+result = binary_search(array, target, 0, n-1)
 
+def binary_search(array, target, start, end):
+    if start > end:
+        return None
+    mid = (start+end) // 2
+    if array[mid] == target:
+        return mid
+    elif array[mid] > target:
+        return binary_search(array, target, start, mid-1)
+    else:
+        return binary_search(array, target, mid+1, end)
 ```
 
 ### 반복문 (추천)
 ``` python
+result = binary_search(array, target, 0, n-1)
 
+def binary_search(array, target, start, end):
+    while start <= end:
+        mid = (start+end) // 2
+        if array[mid] == target:
+            return mid
+        elif array[mid] < target:
+            start = mid + 1
+        else:
+            end = mid -1
+    return None
 ```
 
 ### 이진탐색트리

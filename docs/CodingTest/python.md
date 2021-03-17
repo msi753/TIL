@@ -333,5 +333,30 @@ def heapsort(iterable) :
 result = heapsort([1, 3, 5, 7, 9, 2, 4, 6, 8, 0])
 print(result)
 
+while len(heap) != 1:
+    one = heapq.heappop(heap)
+    two = heapq.heappop(heap)
+    sum_val = one+two
+    result += sum_val
+    heapq.heappush(heap, sum_val)
 ```
+
 > 4. bisect
+``` python
+from bisect import bisect_left, bisect_right
+
+def count_by_range(array, left_value, right_value):
+    right_index = bisect_right(array, right_value)
+    left_index = bisect_left(array, left, value)
+    return right_index - left_index
+
+n, x = map(int, input().split())
+array = list(map(int, input().split()))
+
+count = count_by_range(array, x, x)
+
+if count == 0:
+    print(-1)
+else:
+    print(count)
+```

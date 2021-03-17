@@ -6,4 +6,4 @@
 
 > https://blog.naver.com/msi753
 
-> https://velog.io/@msi753 블로그에서 중요하다고 생각하는 부분 발췌
+> https://velog.io/@msi753

@@ -152,20 +152,44 @@ print_aaaasterisk(foo=1, foo=2)
 >> <class 'dict'>
 ```
 
-+ 4948 베르트랑 공준 푸는 중
-``` pypy
-answer = []
++ 제곱근 구하는 방법
+``` python
+import math
+
+num = 16
+
+int(num**0.5)
+int(math.sqrt(num))
+```
+
++ 4948 베르트랑 공준, 백준 504 Gateway Time-out 오류로 TIL에 기록하기
+``` python
+import math
+import sys
+input = sys.stdin.readline().rstrip
+
+def prime_num(num):
+    if num < 2:
+        return False
+
+    for i in range(2, int(math.sqrt(num))+1):
+        if num % i == 0:
+            return False
+    return True
 
 a = int(input())
-while a>0:
+
+answer = []
+while a > 0:
+
     cnt = 0
-
-    n = a
-    n2 = n*2
-
-    
-
+    for i in range(a+1, a*2+1):
+        if prime_num(i):
+            cnt += 1
+    answer.append(cnt)
 
     a = int(input())
 
+for i in answer:
+    print(i)
 ```
