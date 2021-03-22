@@ -90,7 +90,8 @@ for i in range(len(string)):
 ```
 import sys
 sys.stdout.write("aaa") # \n을 포함하지 않음.
-sys.stdout.write("bbb)  # 결과: aaabbb
+sys.stdout.write("bbb)  # 결과: aaabbb, str만 출력 가능함
+# write() argument must be str, not int
 ```
 
 + 대문자로 변경하기
