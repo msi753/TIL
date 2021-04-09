@@ -1,6 +1,57 @@
 # 문제 유형별 정리
 
-## 1. DFS/BFS
+## 1. 그리디
+현재 상황에서 가장 좋아 보이는 것만을 선택하는 알고리즘
+동전 거슬러 주기
+``` python
+n = 1260
+count = 0
+
+# 큰 단위의 화폐부터
+coin_types = [500, 100, 50, 10]
+
+for coin in coin_types:
+    count += n // coin  # 해당 화폐로 거슬러 줄 수 있는 동전의 개수
+    n %= coin
+
+print(count)
+```
+
+## 2. 구현
+피지컬로 승부하는 알고리즘
+- 입력
+    ```
+    5               # 크기 N
+    R R R U D D     # 이동 계획
+    ```
+- 출력
+    ```
+    3 4     # 도착 좌표
+    ```
+
+``` python
+n = int(input())
+x, y = 1, 1
+plans = input().split()
+
+dx = [0, 0, -1, 1]
+dy = [-1, 1, 0, 0]
+move_types = ['L', 'R', 'U', 'D']
+
+for plan in plans:
+    for i in range(len(move_types)):
+        if plan == move_types[i]:
+            nx = x + dx[i]
+            ny = y + dy[i]
+    # 공간을 벗어나는 경우 무시
+    if nx < 1 or ny < 1 or nx > n or ny > n:
+        continue
+    x, y = nx, ny
+
+print(x, y)
+```
+
+## 3. DFS/BFS
 
 ### 스택
 ``` python
@@ -107,7 +158,7 @@ visited = [False]*9
 bfs(graph, 1, visited)
 ```
 
-## 2. 정렬
+## 4. 정렬
 ### 선택정렬
 시간복잡도: O(N^2)
 가장 작은 것을 선택한다
@@ -205,7 +256,7 @@ result = sorted(student_tuples, key=lambda student: student[2])   # sort by age
 print(result)
 ```
 
-## 3. 이진 탐색 binary search
+## 5. 이진 탐색 binary search
 
 **전제:** 이미 정렬되어 있다
 
@@ -251,8 +302,59 @@ def binary_search(array, target, start, end):
 ### 이진탐색트리
 왼쪽 노드의 값 < 루트의 값 < 오른쪽 노드의 값
 
-## 4. 다이나믹 프로그래밍 DP
+## 6. 다이나믹 프로그래밍 DP
 
-## 5. 최단 경로
+중복되는 연산을 줄이는 방법
 
-## 6. 그래프 이론
+- 언제 사용하나?
+1. 큰 문제를 작은 문제로 나눌 수 있고(최적 부분 구조)
+2. 작은 문제에서 구한 정답은 그것을 포함하는 큰 문제에서도 동일할 때(중복되는 부분 문제)
+
+그리디도 아니고 구현도 아니고 완전탐색도 아닐 때
+
+### 메모이제이션기법으로 피보나치 수열 구현하기
+
+메모이제이션이란?
+
+한 번 구한 결과를 메모리 공간에 메모해두고 같은 식을 다시 호출해 메모한 결과를 그대로 가져오는 기법(캐싱)
+
+퀵 정렬: 피봇값을 다시 처리하는 부문 문제는 존재하지 않는다.
+다이내믹 프로그래밍: 한 번 해결했던 문제를 다시 해결한다.
+
+시간복잠도: O(N)
+``` python
+# 메모이제이션하기 위한 리스트 초기화
+d = [0] * 100
+
+def fibo(x):
+    if x == 1 or x == 2:
+        return 1
+    # 이미 계산한 적이 있으면 그대로 리턴
+    if d[x] != 0:
+        return d[x]
+    d[x] = fibo(x-1) + fibo(x-2)
+    return d[x]
+
+print(fibo(6))
+```
+
+### 반복문을 이용한 bottom up 방식
+스택 크기가 한정되어 있을 수 있기 때문에 탑다운보다 보텀업 권장
+``` python
+d = [0] * 100
+
+d[1] = 1
+d[2] = 1
+n = 99
+
+for i in range(3, n+1):
+    d[i] = d[i-1] + d[i-2]
+
+print(d[n])
+```
+
+- sys 라이브러리의 setrecursionlimit() 함수를 호출해 재귀 제한을 완화할 수 있다.
+
+## 7. 최단 경로
+
+## 8. 그래프 이론
