@@ -356,5 +356,119 @@ print(d[n])
 - sys 라이브러리의 setrecursionlimit() 함수를 호출해 재귀 제한을 완화할 수 있다.
 
 ## 7. 최단 경로
+- 유형
+    + 다익스트라 최단 경로 알고리즘
+    + 플로이드 워셜 알고리즘
+    + 벨만 포드 알고리즘
+
+### 다익스트라 최단 알고리즘 Dijkstra
+'특정한 노드'에서 출발하여 '다른 노드'로 가는 경우 사용
+
+주로 GPS 소프트웨어의 기본 알고리즘으로 채택됨
+
+'그리디' 알고리즘으로 분류된다(방문하지 않은 노드 중에서 현재 최단 거리가 가장 짧은 노드를 확인하기 때문이다)
+
+int(1e9)는 10억, 무한을 표현할 때 사용
+
+987654321으로도 대체 가능
+
+한 단계당 하나의 노드에 대한 최단 거리를 확실히 찾는 것
+
+> 바로 아래의 예시는 간단한 다익스트라 알고리즘으로 시간 복잡도는 O(V^2)이다
+``` python
+import sys
+input = sys.stdin.readline
+INF = int(1e9)  # 무한
+
+# 노드와 간선의 개수
+n, m = map(int, input().split())
+# 시작 노드 번호 입력받기
+start = int(input())
+# 각 노드에 연결되어 있는 노드에 대한 정보를 담는 리스트를 만들기
+graph = [[] for i in range(n+1)]
+# 방문한 적이 있는지 체크하는 목적의 리스트를 만들기
+visited = [False] * (n+1)
+# 최단 거리 테이블을 모두 무한으로 초기화
+distance = [INF] * (n+1)
+
+# 모든 간선 정보를 입력받기
+for _ in range(m):
+    a, b, c = map(int, input().split())
+    
+    # a번 노드에서 b번 노드로 가는 비용이 c라는 의미
+    graph[a].append((b, c))
+
+    # 방문하지 않은 노드 중에서, 가장 최단 거리가 짧은 노드의 번호를 반환
+    def get_smallest_node():
+        min_value = INF
+        index = 0 # 가장 최단 거리가 짧은 노드(인덱스)
+        for i in range(1, n+1):
+            if distance[i] < min_value and not visited[i]:
+                min_value = distance[i]
+                index = i
+        return index
+
+    def dijkstra(start):
+        # 시작 노드에 대해서 초기화
+        distance[start] = 0
+        visited[start] = True
+        for j in graph[start]:
+            distance[j[0]] = j[1]
+        # 시작 노드를 제외한 전체 n-1개의 노드에 대해 반복
+        for i in range(n-1):
+            # 현재 최단 거리가 가장 짧은 노드를 꺼내서, 방문처리
+            now = get_smallest_node()
+            visited[now] = True
+            # 현재 노드와 연결된 다른 노드를 확인
+            for j in graph[now]:
+                cost = distance[now] + j[1]
+                # 현재 노드를 거쳐서 다른 노드로 이동하는 거리가 더 짧은 경우
+                if cost < distance[j[0]]:
+                    distance[j[0]] = cost
+
+# 다익스트라 알고리즘 수행
+dijkstra(start)
+
+# 모든 노드로 가기 위한 최단 거리를 출력
+for i in range(1, n+1):
+    # 도달할 수 없는 경우, 무한(INFINITY)이라고 출력
+    if distance[i] == INF:
+        print("INFINITY")
+    # 도달할 수 있는 경우 거리를 출력
+    else:
+        print(distance[i])
+```
+
+> 개선된 다익스트라 알고리즘, 시간복잡도 O(ElogV), 힙heap 자료구조 사용(현재 가장 가까운 노드를 저장하기 위한 목적)
+
+- heapq
+<br>우선순위 큐
+<br> 최소힙, O(NlongN), 최상단 원소는 '가장 작은' 원소
+```
+import heapq
+
+def heapsort(iterable) :
+    h = []
+    result = []
+    for value in iterable :
+        heapq.heappush(h, value)    //최대힙 heapq.heappush(h, -value)
+    for value in range(len(h)) :
+        result.append(heapq.heappop(h))  //최대힙 result.append(-heapq.heappop(h))
+    return result       //여기까지 O(logN)... 트리구조
+
+result = heapsort([1, 3, 5, 7, 9, 2, 4, 6, 8, 0]) //여기까지 O(NlogN)
+print(result)   //[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+while len(heap) != 1:
+    one = heapq.heappop(heap)
+    two = heapq.heappop(heap)
+    sum_val = one+two
+    result += sum_val
+    heapq.heappush(heap, sum_val)
+```
+
+``` python
+
+```
 
 ## 8. 그래프 이론
