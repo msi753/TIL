@@ -1,14 +1,15 @@
-# 0. 탭키보다 띄어쓰기 4번을 습관 들이자
-# 0. python(pypy)이 초과되면 pypy(python)로 제출한다.
-# 0. 1초에 2000만번의 연산을 처리할 수 있다고 가정하고 문제를 푼다.
+# 탭키보다 띄어쓰기 4번을 습관 들이자
+# python(pypy)이 초과되면 pypy(python)로 제출한다.
+# 1초에 2000만번의 연산을 처리할 수 있다고 가정하고 문제를 푼다.  
 시간 제한이 1초이고, 데이터의 개수가 100만 개인 문제가 있다면 일반적으로 시간 복잡도 O(NlogN) 이내의 알고리즘을 이용하여 문제를 풀어야 한다.
+
 - argument, 인자, 함수를 호출할 때 넣는 값
 - parameter, 매개변수, 함수 내부적으로 전달받고자 하는 값
-<br>
 
-# 0. 입력의 개수가 정해지지 않았을 때 입력 받는 방법
+# 입력의 개수가 정해지지 않았을 때 입력 받는 방법
 + EOF
 + try/except
+
 ```
 # input.txt
 1 1
@@ -17,6 +18,7 @@
 9 8
 5 2
 ```
+
 ```
 # main.py
 import sys
@@ -27,6 +29,7 @@ for line in sys.stdin
     n, m = map(int, line.split())   # 1 1
     print(n+m)                      #2
 ```
+
 ```
 제출 답변 1 (정석)
 import sys
@@ -36,6 +39,7 @@ for line in sys.stdin
     n, m = map(int, line.split())
     print(n+m)
 ```
+
 ```
 제출 답변 2
 import sys
@@ -47,6 +51,7 @@ while True:
     except:
         break
 ```
+
 ```
 제출 답변 3
 while True:
@@ -56,20 +61,22 @@ while True:
     except:
         break
 ```
+
 # 1. 자료형
+
 > 수
 - 1e9 는 10의 9제곱(10억)
 - 987,654,321 로 표현하기도 한다
 - round(123.456, 2) 의 결과는 123.46
     + round()는 끝자리가 0이면 출력하지 않는다. ex) round(3.1015, 2) -> 3.1
     + math는 정수를 리턴
-    ``` python
-    import math
-    math.ceil(3.1015)   # 4
-    ```
+      ``` python
+      import math
+      math.ceil(3.1015)   # 4
+      ```
 - a//b 몫 구하기
-- a**b x의 y제곱근
-<br>
+- a**b x의 y제곱근  
+
 > 지수
 - 1e^9 는 10^9 (10,000,000,000) 십억
 - 최단경로 알고리즘에서 도달할 수 없는 노드에 대한 최단거리를 무한으로 둘 때 사용
@@ -81,19 +88,22 @@ while True:
 - 빈 리스트 선언 방법, a = list(), a = []
 - 크기가 n이고, 모든 값이 0인 1차원 리스트 초기화, a = [0] * n
 - 인덱싱과 슬라이싱
+  ``` python
+  a = [1, 2, 3, 4]
+  print(a[-1])    #4
+  print(a[-3])    #2
+  print(a[1:4])   #[2, 3, 4] 0부터 시작하고 1을 뺀 값의 인덱스까지 처리
 ```
-a = [1, 2, 3, 4]
-print(a[-1])    #4
-print(a[-3])    #2
-print(a[1:4])   #[2, 3, 4]
-                #0부터 시작하고 1을 뺀 값의 인덱스까지 처리
-```
-- 리스트 컴프리헨션 [i for i in range(20) if i %2 == 1]
-<br>[1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
+
+- 리스트 컴프리헨션  
+[i for i in range(20) if i %2 == 1]  
+\>\>[1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
+
 - 2차원 리스트 [[0] * 4 for _in range(3)]
-- 0이 아닐 때, [[] for _ in range(n)]
-<br><b>반드시 이 방법으로 초기화해야 한다!</b>
-<br>[[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
+- 0이 아닐 때, [[] for _ in range(n)]  
+<b>반드시 이 방법으로 초기화해야 한다!</b>  
+\>\> [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
+
 - append()의 시간복잡도는 O(1)
 - sort()의 시간복잡도는 O(NlogN)
 - reverse(), insert(), count(), remove()의 시간복잡도는 O(N)
@@ -102,10 +112,10 @@ print(a[1:4])   #[2, 3, 4]
 > 문자열
 - +로 연결
 - 특정 인덱스의 값 변경 <b>불가능</b>
-```
-a = "String"
-print(a*3)  #StringStringString
-```
+  ``` python
+  a = "String"
+  print(a*3)  #StringStringString
+  ```
 
 > 튜플
 - 변경 불가능
@@ -114,7 +124,7 @@ print(a*3)  #StringStringString
 
 > 사전자료형
 - 해시테이블 O(1) 리스트보다 빠르다
-```
+``` python
 data = dict()
 data['사과'] = 'Apple'
 data['바나나'] = 'Banana'
@@ -132,40 +142,35 @@ for key in key_list:
 - add(), update(), remove()
 
 > array[::] 용법 (Extended Slices)
-- arr[A:B:C], index A 부터 index B 까지 C의 간격으로 배열을 만들어라
+- arr[A:B:C], index A 부터 index B 까지 C의 간격으로 배열을 만들어라  
 ``` python
 arr = range(10)
-
 arr  
 >> [0,1,2,3,4,5,6,7,8,9]
-
 arr[::2] # 처음부터 끝까지 두 칸 간격으로  
 >> [0,2,4,6,8] 
-
 arr[1::2] # index 1 부터 끝까지 두 칸 간격으로   
 >> [1,3,5,7,9] 
-
 arr[::-1] # 처음부터 끝까지 -1칸 간격으로 (역순으로)  
 >> [9,8,7,6,5,4,3,2,1,0] 
-
 arr[::-2] # 처음부터 끝까지 -2칸 간격으로 (역순, 두 칸 간격으로)  
 >> [9,7,5,3,1] 
-
 arr[3::-1] # index 3 부터 끝까지 -1칸 간격으로 (역순으로)  
 >> [3,2,1,0] 
-
 arr[1:6:2] # index 1 부터 index 6 까지 두 칸 간격으로  
 >> [1,3,5]
 ```
 
 # 2. 조건문
-```
+``` python
 if score >= 80: result = "Success"
     else: result = "Fail"
 ```
-```
+
+``` python
 result = "Success" if score >= 80 else "Fail"   #한줄에 쓸 땐 if문이 가운데
 ```
+
 - if ~ elif ~ else
 
 # 3. 반복문
@@ -176,16 +181,19 @@ result = "Success" if score >= 80 else "Fail"   #한줄에 쓸 땐 if문이 가�
 # 4. 함수
 > 람다 표현식 Lambda Express
 - print((lambda a, b: a + b)(3, 7))
-```
+
+``` python
 add = lambda x, y : x + y
 print(add(3, 4))
 ```
-```
+
+``` python
 lambdas = [lambda x:x+10, lambda x:x+100]
 print(lambda[0](5)) //15
 print(lambda[1](5)) //105
 ```
-```
+
+``` python
 list1 = [1, 2, 3, 4, 5]
 list2 = [6, 7, 8, 9, 10]
 result = map(lambda a, b : a+b, list1, list2)
