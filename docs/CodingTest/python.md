@@ -97,8 +97,8 @@ print(a[1:4])   #[2, 3, 4]
 - append()의 시간복잡도는 O(1)
 - sort()의 시간복잡도는 O(NlogN)
 - reverse(), insert(), count(), remove()의 시간복잡도는 O(N)
-- 삭제는 [i  for i in a  if i <b>not in</b> remove_Set] 
-<br>
+- 삭제는 [i  for i in a  if i <b>not in</b> remove_Set]
+
 > 문자열
 - +로 연결
 - 특정 인덱스의 값 변경 <b>불가능</b>
@@ -111,7 +111,7 @@ print(a*3)  #StringStringString
 - 변경 불가능
 - (비용, 노드번호)
 - 최단경로 알고리즘
-<br>
+
 > 사전자료형
 - 해시테이블 O(1) 리스트보다 빠르다
 ```
@@ -133,33 +133,32 @@ for key in key_list:
 
 > array[::] 용법 (Extended Slices)
 - arr[A:B:C], index A 부터 index B 까지 C의 간격으로 배열을 만들어라
-
+``` python
 arr = range(10)
-<br>
 
-arr
-<br> [0,1,2,3,4,5,6,7,8,9]
+arr  
+>> [0,1,2,3,4,5,6,7,8,9]
 
-arr[::2] # 처음부터 끝까지 두 칸 간격으로
-<br> [0,2,4,6,8] 
+arr[::2] # 처음부터 끝까지 두 칸 간격으로  
+>> [0,2,4,6,8] 
 
-arr[1::2] # index 1 부터 끝까지 두 칸 간격으로 
-<br> [1,3,5,7,9] 
+arr[1::2] # index 1 부터 끝까지 두 칸 간격으로   
+>> [1,3,5,7,9] 
 
-arr[::-1] # 처음부터 끝까지 -1칸 간격으로 (역순으로) 
-<br> [9,8,7,6,5,4,3,2,1,0] 
+arr[::-1] # 처음부터 끝까지 -1칸 간격으로 (역순으로)  
+>> [9,8,7,6,5,4,3,2,1,0] 
 
-arr[::-2] # 처음부터 끝까지 -2칸 간격으로 (역순, 두 칸 간격으로) 
-<br> [9,7,5,3,1] 
+arr[::-2] # 처음부터 끝까지 -2칸 간격으로 (역순, 두 칸 간격으로)  
+>> [9,7,5,3,1] 
 
-arr[3::-1] # index 3 부터 끝까지 -1칸 간격으로 (역순으로) 
-<br> [3,2,1,0] 
+arr[3::-1] # index 3 부터 끝까지 -1칸 간격으로 (역순으로)  
+>> [3,2,1,0] 
 
-arr[1:6:2] # index 1 부터 index 6 까지 두 칸 간격으로 
-<br> [1,3,5]
+arr[1:6:2] # index 1 부터 index 6 까지 두 칸 간격으로  
+>> [1,3,5]
+```
 
 # 2. 조건문
-- pass 나중에 작성할 소스코드
 ```
 if score >= 80: result = "Success"
     else: result = "Fail"
@@ -183,8 +182,8 @@ print(add(3, 4))
 ```
 ```
 lambdas = [lambda x:x+10, lambda x:x+100]
-print(lambda[0](5))
-print(lambda[1](5))
+print(lambda[0](5)) //15
+print(lambda[1](5)) //105
 ```
 ```
 list1 = [1, 2, 3, 4, 5]
@@ -195,46 +194,46 @@ print(list(result))     #[7, 9, 11, 13, 15]
 
 # 5. 입출력
 - input() 한 줄의 문자열
-- 공백 list(map(int, input().split()))일 때,
-<br> input()으로 입력받은 문자열을 split()을 이용해 공백으로 나눈 리스트로 바꾼 후에
-<br> map을 이용하여 해당 리스트의 모든 원소에 int()함수를 적용하고, 그 결과를 list()로 다시 바꾼다
+- 공백 list(map(int, input().split()))일 때, input()으로 입력받은 문자열을 split()을 이용해 공백으로 나눈 리스트로 바꾼 후에 map을 이용하여 해당 리스트의 모든 원소에 int()함수를 적용하고, 그 결과를 list()로 다시 바꾼다
 - 줄바꿈 int(input())
 - n, m, k = map(int, input().split())
-<br>
-```
-import sys
-data = sys.stdin.readline().rstrip()
-print(data)
-```
-- readline()으로 입력하면 입력 후 엔터가 줄 바꿈 기호로 입력되는데,
-<br> 이 공백 문자를 제거하려면 rstrip() 함수를 사용해야 한다.
-- print()는 줄바꿈 포함
-```
-answer = 7
-print("정답은 "+str(answer)+"입니다")
-print("정답은", str(answer), "입니다")  #공백이 들어간다
-```
-- Python3.6 이상 f-string
-``` python
-answer = 7
-print(f"정답은 {answer}입니다.")
+- readline()으로 입력하면 입력 후 엔터가 줄 바꿈 기호로 입력되는데, 이 공백 문자를 제거하려면 rstrip() 함수를 사용해야 한다.
+  ``` python
+  import sys
+  data = sys.stdin.readline().rstrip()
+  print(data)
+  ```
 
-rate = count/data[0]*100
-print(f'{rate:.3f}')   # 40.000
-```
+- print()는 줄바꿈 포함
+  ``` python
+  answer = 7
+  print("정답은 "+str(answer)+"입니다")
+  print("정답은", str(answer), "입니다")  #공백이 들어간다
+  ```
+
+- Python3.6 이상 f-string
+  ``` python
+  answer = 7
+  print(f"정답은 {answer}입니다.")
+
+  rate = count/data[0]*100
+  print(f'{rate:.3f}')   # 40.000
+  ```
+
 - 문자열 자료형끼리만 더하기 연산이 가능하다
 - , 는 띄어쓰기 포함
 - end는 print(줄바꿈 포함)의 줄바꿈 대신 사용
 
 - format()
-``` python
-format(3.141592, ".2f") # 3.14
-print("{0:.0f}".format(2.34))   # 2 (정수만 출력)
-print("{:.0f}".format(3.01))    # {0} 이라고 표시하면 format함수 안의 첫번째 값을 넣으라는 뜻, 0은 생략 가능
-```
+  ``` python
+  format(3.141592, ".2f") # 3.14
+  print("{0:.0f}".format(2.34))   # 2 (정수만 출력)
+  print("{:.0f}".format(3.01))    # 3, {0} 이라고 표시하면 format함수 안의 첫번째 값을 넣으라는 뜻, 0은 생략 가능
+  ```
+
 # 6. 주요 라이브러리의 문법과 유의점
-- 표준 라이브러리를 사용하자
-<br> <a>https://docs.python.org/3.8/library/index.html</a>
+- 표준 라이브러리를 사용하자  
+<a>https://docs.python.org/3.8/library/index.html</a>
 
 > 1. 내장함수
 ``` python
